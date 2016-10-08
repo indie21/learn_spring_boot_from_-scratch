@@ -1,6 +1,9 @@
 package com.example;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import com.alibaba.fastjson.JSONObject;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
@@ -11,8 +14,18 @@ public class DemoController {
     public Demo hello() {
         Demo demo = new Demo();
         demo.setId(1);
-        demo.setName("hello world 2");
+        demo.setName("hello world 23");
         return demo;
     }
+
+
+    @RequestMapping("/getJson")
+    public String json() {
+        Demo demo = new Demo();
+        demo.setId(1);
+        demo.setName("hello world 23");
+        return JSONObject.toJSONString(demo);
+    }
+
 
 }
