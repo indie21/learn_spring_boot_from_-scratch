@@ -28,4 +28,11 @@ public class DemoController {
     }
 
 
+    @RequestMapping("/getException")
+    public int exception() {
+        return 100/0;
+    }
+
+
+
 }
