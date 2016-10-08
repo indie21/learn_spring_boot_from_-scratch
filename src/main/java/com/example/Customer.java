@@ -1,6 +1,9 @@
 package com.example;
 
 import javax.persistence.Id;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +14,8 @@ public class Customer {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+
+
     private String firstName;
     private String lastName;
 
@@ -27,6 +32,29 @@ public class Customer {
                              "Customer[id=%d, firstName='%s', lastName='%s']",
                              id, firstName, lastName);
     }
+
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+
 
 }
 
