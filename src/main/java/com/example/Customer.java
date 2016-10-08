@@ -18,7 +18,7 @@ public class Customer {
 
     public Customer(String firstname, String lastName) {
         this.firstName = firstName;
-        this.lastname = lastName;
+        this.lastName = lastName;
     }
 
     @Override
