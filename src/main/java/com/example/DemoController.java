@@ -1,12 +1,20 @@
 package com.example;
 
+
 import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.fastjson.JSONObject;
+
+import javax.annotation.Resource;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 @RequestMapping("/demo")
 public class DemoController {
+
+
+    @Resource
+    private CustomerService customerService;
 
     @RequestMapping("/getDemo")
     public Demo hello() {
@@ -28,6 +36,13 @@ public class DemoController {
     public int exception() {
         return 100/0;
     }
+
+
+    @RequestMapping("/getJpa")
+    public void jpa() {
+        customerService.test();
+    }
+
 
 
 
