@@ -14,6 +14,10 @@ public class MyWebAppConfigurer extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/myres/**").addResourceLocations("classpath:/myres/");
+
+        // 指定外部目录.
+        //registry.addResourceHandler("/api_files/**").addResourceLocations("file:D:/data/ api_files");
+
         super.addResourceHandlers(registry);
     }
 
